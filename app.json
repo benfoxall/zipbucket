@@ -1,0 +1,12 @@
+{
+  "name": "Zip Bucket",
+  "description": "Serve gzipped content from s3",
+  "repository": "https://github.com/benfoxall/zipbucket",
+  "keywords": ["aws", "s3"],
+  "env": {
+    "HOST": {
+      "description": "What host do you want to proxy?",
+      "value": "http://example.com"
+    }
+  }
+}
