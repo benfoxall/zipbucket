@@ -1,5 +1,19 @@
-var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200, {'Content-Type': 'text/plain'});
-  res.end('Hello World\n');
-}).listen(process.env.PORT || 3000, '0.0.0.0');
+var httpProxy = require('http-proxy'),
+    compression = require('compression'),
+    express = require('express'),
+    app = express();
+
+
+var proxy = httpProxy.createProxyServer({
+  target: process.env.HOST || 'http://example.com',
+  changeOrigin: true
+});
+
+app.use(
+  compression(),
+  function(req, res){
+    proxy.web(req, res);
+  }
+);
+
+app.listen(process.env.PORT || 3000);

@@ -16,5 +16,10 @@
   "bugs": {
     "url": "https://github.com/benfoxall/zipbucket/issues"
   },
-  "homepage": "https://github.com/benfoxall/zipbucket"
+  "homepage": "https://github.com/benfoxall/zipbucket",
+  "dependencies": {
+    "compression": "^1.4.3",
+    "express": "^4.12.3",
+    "http-proxy": "^1.11.1"
+  }
 }
